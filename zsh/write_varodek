@@ -1,0 +1,9 @@
+When the terminal Starts it reads various files for various modes.
+
+For example it reads ~/.zshrc file when open in interactive mode.
+
+So we compile a c program to write "VARoDeK" on terminal.
+
+then add the path to .out file of our c program in ~/.zshrc file.
+
+So everytime you open terminal, it will run that C command.
