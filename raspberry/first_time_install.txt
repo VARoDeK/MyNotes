@@ -1,0 +1,26 @@
+Step 1: Mount OS for pi.
+ - Format your SD card, not "quick format". It will initialize all your memory bytes with null. 
+ - Install Etcher.
+ - Etcher will mount your linux OS for raspberry, on your SD card.
+ - NOTE: Etcher can mount any kind of Linux OS (for Desktop or for Pi) on the drive of your choice.
+
+------------------------------------------------------------------------
+
+Step 2: Enable ssh for "Headless setup" of pi. 
+ - After mount, open "boot" partition of your SD card.
+ - Add an empty file, with name "ssh" (no extension).
+ - If face any right issues, explore on google.
+
+------------------------------------------------------------------------
+
+Step 3.0: Connecting raspberry to the network.
+ - Connecct your raspberrypi and your system to same router to provide them with IP addresses.
+ - On windows, you can also opt for "Network Sharing" through your ethernet port, connect your raspberry pi to your system through ethernet, and your system connected to wireless router. This way your pi and your system will get distinct IP addresses.
+ - install "nmap" for linux, or "Angry IP scanner", to identify the IP address allotted to you pi. (Learn the usage of "nmap" and "Angry IP scanner" from net.)
+
+
+
+
+
+
+to be completed.................
