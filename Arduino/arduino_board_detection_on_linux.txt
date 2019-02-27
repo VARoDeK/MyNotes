@@ -1,0 +1,4 @@
+$ ls -l /dev/ttyACM*
+		#suppose your arduino board is detected with name /dev/ttyACM0
+
+$ sudo chmod a+rw /dev/ttyACM0
