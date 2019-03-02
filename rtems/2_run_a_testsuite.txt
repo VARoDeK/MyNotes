@@ -1,0 +1,12 @@
+$ cd
+$ cd development/rtems/kernel/erc32/sparc-rtems5/c/erc32/testsuites/samples
+$ sparc-rtems5-gdb hello.exe
+	#gdb will ask fro inputs:
+		#tar sim
+		#load
+		#r
+		#q(to quit)
+
+Or if you just wanna run/ not debug
+
+$ sparc-rtems5-run hello.exe

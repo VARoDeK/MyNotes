@@ -1,0 +1,7 @@
+--ALWAYS MAKE A NEW BRANCH for each contribution/ change. Suppose when you made a contribution to mention the installation of 'pax' package, in rtems-docs; you made an another branch with name 'install_pax' (git checkout -b install_pax)
+
+--If you ever contribute to rtems-docs, MAKE SURE THAT THE CONTENTS OF DOCS ARE FORMATTED IN 80 COLUMNS. That means only 80 characters in a line.
+
+--Even THE GIT COMMIT SHOULD ALSO BE FORMATTED IN 80 COLUMNS. That means only 80 characters in a line.
+
+--To use 'git send-email' ,  you need to go to your google account->security->allow third party apps to send email. ; As this is very volatile for security of your account, just allow it for the seconds you are using 'git send-email', then again switch it off.
