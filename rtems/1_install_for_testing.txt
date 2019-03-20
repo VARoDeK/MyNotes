@@ -29,7 +29,7 @@ $ cd ..
 $ mkdir erc32
 $ cd erc32
 
-$ /home/varodek/development/rtems/kernel/rtems/configure --prefix=/home/varodek/development/rtems/5 --enable-maintainer-mode --target=sparc-rtems5 --enable-rtemsbsp=erc32 --enable-tests --enable-posix --disable-networking
+$ /home/varodek/development/rtems/kernel/rtems/configure --prefix=/home/varodek/development/rtems/5 --enable-maintainer-mode --target=sparc-rtems5 --enable-rtemsbsp=erc32 --enable-tests --enable-posix --disable-networking --enable-cxx
 
 
 $ make -j 2

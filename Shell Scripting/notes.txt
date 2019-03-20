@@ -1,0 +1,11 @@
+-- To define a variable we writee them like as follows:
+		NAME="Vaibhav"
+	NOTE: We cannot put space between variable name and '='
+
+	--NAME="Vaibhav"	Correct
+	--NAME ="Vaibhav"	Incorrect
+	--NAME = "Vaibhav"      Incorrect
+
+	In latter cases, shell will think, 'NAME' is a command and '=' , 'Vaibhav' are arguments to it, and will try to execute it.
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- You cannot unset a readonly variable
