@@ -275,7 +275,7 @@ Run the following command:
 
 ---
 
-## 9 - Install some useful packages:
+# Install important packages:
 
 ```
 $ pacman -S linux-lts
