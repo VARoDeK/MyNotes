@@ -248,11 +248,13 @@ Here a new user with username 'newuser' was added and the default shell given to
 For example I wanted a 'zsh' shell. So first I installed it `$ pacman -S zsh`, then the user adding command was modified to `$ useradd -m -G wheel -s /bin/zsh newuser`.
 
 To add password for the 'newuser', run the following command:
+
 `$ passwd newuser`
 
 
 Now set up `sudo`.
 Run the following command:
+
 `$ visudo`
 
 * Using arrow keys find the line,
@@ -270,6 +272,11 @@ Run the following command:
 ```
 
 * Now type **:wq** and hit enter.
+
+Install some useful packages:
+
+`$ pacman -S wicd`
+
 ---
 
 # Reboot
