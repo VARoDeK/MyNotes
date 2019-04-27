@@ -67,7 +67,7 @@ I can use the latest drivers. Hence I am using the `dkms` version.
 
 `$ sudo pacman -S broadcom-wl-dkms`
 
-####Now re-start your PC.
+#### Now re-start your PC.
 
 Search the name of your wire-less interface.
 
