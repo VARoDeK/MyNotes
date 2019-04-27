@@ -34,3 +34,36 @@ and connect to it. [Refer Here](https://wiki.archlinux.org/index.php/Installatio
 
 ---
 
+## 5 - Update the system clock
+
+`timedatectl set-ntp true`
+
+---
+
+## 6 - Partition Disk
+Run the following command:
+
+`lsblk -o name,size,type,mountpoint,fstype`
+
+This will print the list of storage drives and thier pre-existing partitions with their file-system types.
+The Partitions are written in form of `sdxn`.
+**x** - tells the storage device number.
+**n** - tells the partition number.
+
+For example, my HDD has three partitions. And its the only secondary memory device in my laptop. It's partitions are named as:
+* `sda1`.
+* `sda2`.
+* `sda3`.
+
+Recommended - Make three partitions for installing Arch Linux.
+I will exaplin it with the help of my system.
+* `sda1`	|	partition type: vfat	|	size: 550M
+* `sda2`	|	partition type: ext4	|	size: 923G
+* `sda3`	|	partition type: swap	|	size: 7.8G
+
+Note - The size of swap (sda3 in my case) should be almost eqal to the size of your RAM.
+
+---
+
+## 7 - Coverting Partiton-Type of each Partition
+
