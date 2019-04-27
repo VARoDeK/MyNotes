@@ -94,9 +94,11 @@ I will explain it using the partitions of my own system.
 ## 8 - Mount File Systems
 Run the Following Commands:
 
-`$ mkdir /mnt/boot`
-`$ mount /dev/sda1 /mnt/boot`
-`$ mount /dev/sda2 /mnt`
+```
+$ mkdir /mnt/boot
+$ mount /dev/sda1 /mnt/boot
+$ mount /dev/sda2 /mnt
+```
 
 ---
 
