@@ -51,13 +51,15 @@ Run the following command:
 
 This will print the list of storage drives and thier pre-existing partitions with their file-system types.
 The Partitions are written in form of `sdxn`.
-**x** - tells the storage device number.
+
+**x** - tells the storage device character.
+
 **n** - tells the partition number.
 
 For example, my HDD has three partitions. And its the only secondary memory device in my laptop. It's partitions are named as:
-* `sda1`.
-* `sda2`.
-* `sda3`.
+* `sda1`
+* `sda2`
+* `sda3`
 
 Recommended - Make three partitions for installing Arch Linux.
 I will exaplin it with the help of my system.
@@ -73,8 +75,7 @@ Note - The size of swap (sda3 in my case) should be almost eqal to the size of y
 ---
 
 ## 7 - Coverting Partiton-Type of each Partition
-I will explain it using the partitions of my own system.
-**Use the partition name of your drive in your system**.
+I will explain it using the partitions of my own system. **Use the partition name of your drive in your system**.
 
 * `sda1` should be of `vfat` type.
 
@@ -137,8 +138,8 @@ Change root into new system
 ## 3 - Time Zone
 Now find out your time zone.
 
-* find the `Region` by running command: `$ ls /usr/share/zoneinfo`. For example, in my case, region is 'Asia'.
-* find the `city` by running command: `$ ls /usr/share/zoneinfo/Region`. For example, I will run the command, `$ ls /usr/share/zoneinfo/Asia`.
+* Figure out your `Region` by running command: `$ ls /usr/share/zoneinfo`. It will list the region names present in the system. You need to see the region name for your location. For example, in my case, region is 'Asia'.
+* Once you have got 'Region' you can figure out your `city` by running command: `$ ls /usr/share/zoneinfo/Region`. For example, I will run the command, `$ ls /usr/share/zoneinfo/Asia`.
 * Hence my Region is Asia and City is Kolkata.
 
 Run the command:
@@ -166,6 +167,8 @@ Open `/etc/locale.gen` usin `vim`.
 * Without Pressing any other key, press **Esc** key.
 * Type **:wq** and hit enter.
 
+Note: If you made any mistake while editing, don't panic, just press **Esc** key, type **qa!** and hit enter. Now again open the file using vim and follow steps.
+
 Now run the following command:
 
 `$ locale-gen`
@@ -192,6 +195,8 @@ Run the Following Command:
 * Press **Esc** key.
 * Type **:wq** and hit enter.
 
+Note: If you made any mistake while editing, don't panic, just press **Esc** key, type **qa!** and hit enter. Now again open the file using vim and follow steps.
+
 It may be assumed that you have got bit familiar with `vim`.
 You also need to add matching entry to `/etc/hosts`.
 Run the command:
@@ -203,7 +208,7 @@ Now modify the file to make it look like this:
 ```
 127.0.0.1	localhost.localdomain	localhost
 ::1		localhost.localdomain	localhost
-127.0.1.1	NewHost.localdomain		NewHost
+127.0.1.1	NewHost.localdomain	NewHost
  ```
 
 * Press **Esc** key.

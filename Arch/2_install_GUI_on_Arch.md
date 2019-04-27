@@ -3,7 +3,7 @@
 ---
 
 For GUI you need several things:
-* Display Server (_We will use XORG_)
+* Display Server (_We will use Xorg_)
 * Display Driver (_We will use NVIDIA and Intel Graphics_)
 * Desktop Environment (_We will use Gnome_)
 * Display Manager (_We will use GDM_)
@@ -15,7 +15,9 @@ Refer the above link to download the softwares of your choice.
 ---
 
 ## Display Server
-Run the following command:
+To see servers other than Xorg visit [here](https://wiki.archlinux.org/index.php/General_recommendations#Display_server)
+
+For Xorg, run the following command:
 
 `$ sudo pacman -S xorg-server`
 
@@ -24,14 +26,16 @@ Run the following command:
 ---
 
 ## Display Driver
-For NVIDIA, you need refer [this](https://wiki.archlinux.org/index.php/NVIDIA) page to find the correct driver for your version of NVIDIA.
+Note: Drivers may vary according to the Display Server You have installed. This page strictly follows for Xorg.
+
+For NVIDIA, you need to refer [this](https://wiki.archlinux.org/index.php/NVIDIA) page to find the correct driver for your version of NVIDIA.
 For example I have NVIDIA 940M, so it belongs to NVE0, NV110 and NV130 family cards from around 2010-2019.
 
 Hence I can install the `dkms` module.
 
 `$ sudo pacman -S nvidia-dkms nvidia-utils nvidia-settings`
 
-If your intel chip is also having integrated graphics then `mesa` is required.
+If your intel chip is also having integrated graphics then `mesa` is required. (_Following is tested for Xorg Server_ [Check Here](https://wiki.archlinux.org/index.php/Xorg#Driver_installation))
 
 `$ pacman -S mesa`
 
@@ -45,6 +49,7 @@ Run the following command:
 ---
 
 ## Display Manager
+Since we have installed Gnome, we need to install `gdm` as display manager. See [here](https://wiki.archlinux.org/index.php/Display_manager#Graphical).
 Run the following command:
 
 `$ sudo pacman -S gdm`
