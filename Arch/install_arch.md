@@ -8,7 +8,7 @@
 ## 2 - Boot Your system with your bootable pendrive
 ----------------------------------------
 ## 3 - Verify the Boot Mode
-	`$ ls /sys/firmware/efi/efivars`.
+	`ls /sys/firmware/efi/efivars`.
 If the some output is given, it means the `ls` comand is able to read the `efivars` directory, hence UEFI mode is enabled on your system.
  
 ----------------------------------------
