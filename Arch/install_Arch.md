@@ -57,9 +57,12 @@ For example, my HDD has three partitions. And its the only secondary memory devi
 
 Recommended - Make three partitions for installing Arch Linux.
 I will exaplin it with the help of my system.
-* `sda1`	|	partition type: vfat	|	size: 550M
-* `sda2`	|	partition type: ext4	|	size: 923G
-* `sda3`	|	partition type: swap	|	size: 7.8G
+
+|Partition Name | Partition Type | Size|
+|:-------------:|:--------------:|:---:|
+| `sda1`        | vfat           | 550M|
+| `sda2`        | ext4           | 923G|
+| `sda3`        | swap           | 7.8G|
 
 Note - The size of swap (sda3 in my case) should be almost eqal to the size of your RAM.
 
