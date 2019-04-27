@@ -8,14 +8,14 @@
 ## 2 - Boot Your system with your bootable pendrive
 ----------------------------------------
 ## 3 - Verify the Boot Mode	
-	`$ ls /sys/firmware/efi/efivars`
+	` $ ls /sys/firmware/efi/efivars`
 If the some output is given, it means the `ls` comand is able to read the `efivars` directory, hence UEFI mode is enabled on your system.
  
 ----------------------------------------
 ## 4 - Connect to internet
 
 	- If you have ethernet cable, just plug it in and run the command:
-		`$ dhcpcd`. 
-	- Else, figure out your interface using the command: `$ ip link` and connect to it. [Refer Here](https://wiki.archlinux.org/index.php/Installation_guide#Connect_to_the_internet).
+		` $ dhcpcd`. 
+	- Else, figure out your interface using the command: ` $ ip link` and connect to it. [Refer Here](https://wiki.archlinux.org/index.php/Installation_guide#Connect_to_the_internet).
 	- The connection maybe verified with `ping`. Run the following command:
-		`$ ping -c 3 archlinux.org`.
+		` $ ping -c 3 archlinux.org`.
