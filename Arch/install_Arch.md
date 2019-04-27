@@ -1,3 +1,7 @@
+# Pre-Installation
+
+---
+
 ## 1 - First Download Arch and make a Bootable Pendrive
 * [Download Arch From Here](http://mirror.cse.iitk.ac.in/archlinux/iso/2019.04.01/).
 * Download ISO File.
@@ -25,7 +29,7 @@ If some output is given, it means `ls` command is able to read `efivars` directo
 
 * Else figure out your interface using the command:
 
-`$ip link`
+`$ ip link`
 
 and connect to it. [Refer Here](https://wiki.archlinux.org/index.php/Installation_guide#Connect_to_the_internet).
 * The connection may be verified with `ping`. Run the following command:
@@ -36,14 +40,14 @@ and connect to it. [Refer Here](https://wiki.archlinux.org/index.php/Installatio
 
 ## 5 - Update the system clock
 
-`timedatectl set-ntp true`
+`$ timedatectl set-ntp true`
 
 ---
 
 ## 6 - Partition Disk
 Run the following command:
 
-`lsblk -o name,size,type,mountpoint,fstype`
+`$ lsblk -o name,size,type,mountpoint,fstype`
 
 This will print the list of storage drives and thier pre-existing partitions with their file-system types.
 The Partitions are written in form of `sdxn`.
@@ -69,4 +73,78 @@ Note - The size of swap (sda3 in my case) should be almost eqal to the size of y
 ---
 
 ## 7 - Coverting Partiton-Type of each Partition
+I will explain it using the partitions of my own system.
+**Use the partition name of your drive in your system**.
 
+* `sda1` should be of `vfat` type.
+
+`$ mkfs.vfat /dev/sda1`
+
+* `sda2` should be of `ext4` type.
+
+`$ mkfs.ext4 /dev/sda2`
+
+* `sda3` is a swap.
+
+`$ mkswap /dev/sda3`
+`$ swapon /dev/sda3`
+
+---
+
+## 8 - Mount File Systems
+Run the Following Commands:
+
+`$ mkdir /mnt/boot`
+`$ mount /dev/sda1 /mnt/boot`
+`$ mount /dev/sda2 /mnt`
+
+---
+
+# Installation
+
+---
+
+## 1 - Installing the base packages
+
+Run the Following Command:
+
+`$ pacstrap /mnt base base-devel dialog iw wpa_supplicant sudo`
+
+---
+
+# Configure the system
+
+---
+
+## 1 - Fstab
+Generate and fstab file
+
+`$ genfstab -U /mnt >> /mnt/etc/fstab`
+
+---
+
+## 2 - Chroot
+Change root into new system
+
+`$ srch-chroot /mnt`
+
+---
+
+## 3 - Time Zone
+Now find out your time zone.
+
+* find the `Region` by running command: `$ ls /usr/share/zoneinfo`. For example, in my case, region is 'Asia'.
+* find the `city` by running command: `$ ls /usr/share/zoneinfo/Region`. For example, I will run the command, `$ ls /usr/share/zoneinfo/Asia`.
+* Hence my Region is Asia and City is Kolkata.
+
+Run the command:
+
+`$ ln -sf /usr/share/zoneinfo/Asia/Kolkata`.
+
+Run `hwclock` to generate `/etc/adjtime`
+
+`$ hwclock --systohc`
+
+---
+
+## 4 - Locale 
