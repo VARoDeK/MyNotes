@@ -273,7 +273,7 @@ Run the following command:
 
 * Now type **:wq** and hit enter.
 
-####Install some useful packages:
+#### Install some useful packages:
 
 ```
 $ pacman -S linux-lts
