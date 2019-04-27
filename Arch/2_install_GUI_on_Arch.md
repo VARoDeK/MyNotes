@@ -4,7 +4,7 @@
 
 For GUI you need several things:
 * Display Server (_We will use XORG_)
-* Display Driver (_We will use NVIDIA and Inter Graphics_)
+* Display Driver (_We will use NVIDIA and Intel Graphics_)
 * Desktop Environment (_We will use Gnome_)
 * Display Manager (_We will use GDM_)
 
@@ -30,6 +30,10 @@ For example I have NVIDIA 940M, so it belongs to NVE0, NV110 and NV130 family ca
 Hence I can install the `dkms` module.
 
 `$ sudo pacman -S nvidia-dkms nvidia-utils nvidia-settings`
+
+If your intel chip is also having integrated graphics then `mesa` is required.
+
+`$ pacman -S mesa`
 
 ---
 
