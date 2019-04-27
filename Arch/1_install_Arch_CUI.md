@@ -86,8 +86,10 @@ I will explain it using the partitions of my own system.
 
 * `sda3` is a swap.
 
-`$ mkswap /dev/sda3`
-`$ swapon /dev/sda3`
+```
+$ mkswap /dev/sda3
+$ swapon /dev/sda3
+```
 
 ---
 
