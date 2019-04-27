@@ -16,7 +16,7 @@
 ## 3 - Verify the Boot Mode
 Run the following Command:
 
-`$ ls /sys/firmware/efi/efiwars`
+`$ ls /sys/firmware/efi/efivars`
 
 If some output is given, it means `ls` command is able to read `efivars` directory, hence UEFI mode is enabled on your system.
 
