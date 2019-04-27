@@ -273,9 +273,12 @@ Run the following command:
 
 * Now type **:wq** and hit enter.
 
-Install some useful packages:
+####Install some useful packages:
 
-`$ pacman -S wicd`
+```
+$ pacman -S linux-lts
+$ pacman -S wicd linux-headers linux-lts-headers
+```
 
 ---
 
