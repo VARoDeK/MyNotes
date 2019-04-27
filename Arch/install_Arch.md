@@ -178,4 +178,34 @@ Now, open `/etc/locale.conf` file using command:
 ---
 
 ## 5 - Network Configuration
- 
+You need to give a hostname to your computer.
+Let's say your hostname will be `NewHost`
+Run the Following Command:
+
+`$ vim /etc/hostname` 
+* Press **i** and type:
+ `NewHost`
+* Press **Esc** key.
+* Type **:wq** and hit enter.
+
+It may be assumed that you have got bit familiar with `vim`.
+You also need to add matching entry to `/etc/hosts`.
+Run the command:
+
+`$ vim /etc/hosts`
+
+* Press **i** key.
+Now modify the file to make it look like this:
+```
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+127.0.1.1	NewHost.localdomain	NewHost
+ ```
+
+* Press **Esc** key.
+* Type **:wq** and hit enter.
+
+---
+
+## 6 - Root Password
+
