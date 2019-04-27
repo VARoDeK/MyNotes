@@ -199,7 +199,7 @@ Now modify the file to make it look like this:
 ```
 127.0.0.1	localhost.localdomain	localhost
 ::1		localhost.localdomain	localhost
-127.0.1.1	NewHost.localdomain	NewHost
+127.0.1.1	NewHost.localdomain		NewHost
  ```
 
 * Press **Esc** key.
@@ -208,4 +208,87 @@ Now modify the file to make it look like this:
 ---
 
 ## 6 - Root Password
+Feed password for the root user.
+Run the Following Command: 
+
+`$ passwd`
+
+---
+
+## 7 - Bootloader
+If you have an Intel CPU, install the intel-ucode package
+
+`$ pacman -S intel-ucode`
+
+Now you need to remember if you have UEFI or not.
+
+#### No UEFI
+``` 
+$ pacman -S grub os-prober ntfs-3g
+$ grub-install --target=i386-pc /dev/sdx
+$ grub-mkconfig -o /boot/grub/grub.cfg
+```
+Please replace **x** with the character of your Hard Disk.
+
+#### With UEFI
+```
+$ pacman -S grub os-prober efibootmgr ntfs-3g
+$ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
+$ grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+---
+
+## 8 - New User
+Now it's time to add new user. Suppose you want create a new user with name 'newuser'. Run the Following Command:
+
+`$ useradd -m -G wheel -s /bin/bash newuser`
+
+Here a new user with username 'newuser' was added and the default shell given to it is 'bash' (`/bin/bash`). You can change the shell.
+For example I wanted a 'zsh' shell. So first I installed it `$ pacman -S zsh`, then the user adding command was modified to `$ useradd -m -G wheel -s /bin/zsh newuser`.
+
+To add password for the 'newuser', run the following command:
+`$ passwd newuser`
+
+
+Now set up `sudo`.
+Run the following command:
+`$ visudo`
+
+* Using arrow keys find the line,
+
+```
+## Uncomment to allow members of group wheel to execute any command
+# %wheel ALL=(ALL) ALL
+```  
+
+* Now, carefully place your cursor on the **#** just before **%wheel** and press **x**. This will remove the **#**. It will now look like this:
+
+```
+## Uncomment to allow members of group wheel to execute any command
+ %wheel ALL=(ALL) ALL
+```
+
+* Now type **:wq** and hit enter.
+---
+
+# Reboot
+
+Exit the chroot environment by typing `exit` or pressing `Ctrl+D`.
+Optionally manually unmount all the partitions with `umount -R /mnt`.
+
+Finally, restart the machine by typing 
+
+`$ reboot`. 
+
+Remove the bootable pendrive.
+
+Now while booting choose grub as the default boot option.
+After booting, you will encounter a black screen with option to login. You can now log in with your user.
+* You need to type username (_for this tutorial we took 'newuser'_).
+* Enter Passowrd you added for this user. 
+
+
+
+
 
