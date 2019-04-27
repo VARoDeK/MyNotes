@@ -147,4 +147,35 @@ Run `hwclock` to generate `/etc/adjtime`
 
 ---
 
-## 4 - Locale 
+## 4 - Locale
+Install `vim`.
+
+`$ pacman -S vim`.
+
+Open `/etc/locale.gen` usin `vim`.
+
+`$ vim /etc/locale.gen`.
+
+* Using arrow keys find `#en_US.UTF-8 UTF-8`.
+* Using arrow keys, place the cursor after **#** and press **i**.
+* Using Backspace key, remove the **#**. Now, it will look like, `en_US.UTF-8 UTF 8`.
+* Without Pressing any other key, press **Esc** key.
+* Type **:wq** and hit enter.
+
+Now run the following command:
+
+`$ locale-gen`
+
+Now, open `/etc/locale.conf` file using command:
+
+`$ vim /etc/locale.conf`
+
+* Press **i** and type:
+ `LANG = en_US.UTF-8`
+* Press **Esc** key.
+* Type **:wq** and hit enter.
+
+---
+
+## 5 - Network Configuration
+ 
