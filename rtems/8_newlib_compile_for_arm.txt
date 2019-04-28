@@ -12,8 +12,8 @@ $ cd newlib-cygwin
 $ export PATH=/opt/autoconf/2.64/bin:$PATH
 $ autoreconf -fvi
 $ cd ..
-$ mkdir b-sparc-rterms5-newlib
-$ cd b-sparc-rtems5-newlib
+$ mkdir b-arm-rterms5-newlib
+$ cd b-arm-rtems5-newlib
 $ export PATH=$HOME/development/rtems/5/bin:$PATH
 
 $ ../newlib-cygwin/configure --target=arm-rtems5 --disable-shared --disable-nls --enable-werror --enable-newlib-supplied-syscalls --enable-interwork --enable-multilib --with-gnu-as --with-gnu-ld
