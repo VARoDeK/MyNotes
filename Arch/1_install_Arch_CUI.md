@@ -131,7 +131,7 @@ Generate and fstab file
 ## 2 - Chroot
 Change root into new system
 
-`$ srch-chroot /mnt`
+`$ arch-chroot /mnt`
 
 ---
 
