@@ -1,6 +1,7 @@
-# The ISO image provided by ArchLinux has only Command Line Interface. GUI can be added later. Hence first we need to Install ISO, to do so follow this guide.
+#Introduction
+The ISO image provided by ArchLinux has only Command Line Interface. GUI can be added later. Hence first we need to Install ISO, to do so follow this guide.
 
-## If you have already installed the ISO and are ready to install GUI, refer [here](https://github.com/VARoDeK/mynotes/blob/master/Arch/OS_Installation/2_install_GUI_on_Arch.md).
+* If you have already installed the ISO and are ready to install GUI, refer [here](https://github.com/VARoDeK/mynotes/blob/master/Arch/OS_Installation/2_install_GUI_on_Arch.md).
 
 ---
 
