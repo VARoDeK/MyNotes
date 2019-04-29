@@ -1,4 +1,4 @@
-# First you need to install the Arch CUI [Read](https://github.com/VARoDeK/mynotes/blob/master/Arch/1_install_Arch_CUI.md).
+# First you need to install the Arch CUI [Read](https://github.com/VARoDeK/mynotes/blob/master/Arch/OS_Installation/1_install_Arch_CUI.md).
 
 ---
 
