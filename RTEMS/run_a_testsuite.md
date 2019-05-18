@@ -1,8 +1,8 @@
 # Running a Testsuite in RTEMS
 
-## You can use `gdb` to run a testsuite, or can run it directly.
+#### Note: You can use `gdb` to run a testsuite, or can run it directly.
 
-#### We will run the testsuite present inside SPARC BSP
+### We will run the testsuite present inside SPARC BSP
 
 ---
 
