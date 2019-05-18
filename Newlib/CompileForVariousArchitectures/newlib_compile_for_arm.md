@@ -1,4 +1,4 @@
-# Compile Newlib for SPARC
+# Compile Newlib for ARM
 
 ---
 
