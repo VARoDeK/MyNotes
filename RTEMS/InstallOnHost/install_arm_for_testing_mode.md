@@ -1,0 +1,58 @@
+# Set up RTEMS ARM BSP on Host OS
+
+#### Note: Make sure you have `python 2.7` (devloper version), `python 3` and `pax` package installed on your system.
+
+---
+
+## RSB
+### Setup RSB
+~~~~
+$ cd
+$ mkdir -p development/rtems && cd development/rtems
+$ git clone git://git.rtems.org/rtems-source-builder.git rsb
+$ export PATH=$HOME/development/rtems/5/bin:$PATH 
+	#copy paste the above line in `.zshrc` or `.bashrc`. Depends on terminal you are using.
+$ cd rsb
+$ ./source-builder/sb-check
+$ ./source-builder/sb-set-builder --list-bsets
+~~~~
+
+### Build Toolchain for ARM using RSB
+~~~~
+$ cd rtems
+$ ../source-builder/sb-set-builder --prefix=/home/varodek/development/rtems/5 5/rtems-arm
+~~~~
+
+---
+
+## Build RTEMS using Toolchain
+~~~~
+$ cd
+$ cd development/rtems
+$ mkdir kernel
+$ cd kernel
+~~~~
+~~~~
+$ git clone git://git.rtems.org/rtems.git rtems
+~~~~
+### Bootstrapping
+~~~~
+$ cd rtems
+$ ./bootstrap -c && $HOME/development/rtems/rsb/source-builder/sb-bootstrap
+~~~~
+### Building a BSP
+~~~~
+$ cd ..
+$ mkdir xilinx_zynq_a9_qemu
+$ cd xilinx_zynq_a9_qemu
+~~~~
+~~~~
+$ /home/varodek/development/rtems/kernel/rtems/configure --prefix=/home/varodek/development/rtems/5 --enable-maintainer-mode --target=arm-rtems5 --enable-rtemsbsp=xilinx_zynq_a9_qemu --enable-tests --enable-posix --disable-networking --enable-cxx
+~~~~
+### Build using 2 cores and insall
+~~~~
+$ make -j 2
+$ make install
+~~~~
+---
+
