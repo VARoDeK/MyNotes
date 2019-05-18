@@ -10,8 +10,6 @@
 $ cd
 $ mkdir -p development/rtems && cd development/rtems
 $ git clone git://git.rtems.org/rtems-source-builder.git rsb
-$ export PATH=$HOME/development/rtems/5/bin:$PATH 
-	#copy paste the above line in `.zshrc` or `.bashrc`. Depends on terminal you are using.
 $ cd rsb
 $ ./source-builder/sb-check
 $ ./source-builder/sb-set-builder --list-bsets
@@ -37,6 +35,7 @@ $ git clone git://git.rtems.org/rtems.git rtems
 ~~~~
 ### Bootstrapping
 ~~~~
+$ export PATH=$HOME/development/rtems/5/bin:$PATH 
 $ cd rtems
 $ ./bootstrap -c && $HOME/development/rtems/rsb/source-builder/sb-bootstrap
 ~~~~

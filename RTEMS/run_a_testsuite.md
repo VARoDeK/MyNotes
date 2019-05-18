@@ -34,3 +34,4 @@ $ sparc-rtems5-gdb hello.exe
 ~~~~
 $ sparc-rtems5-run hello.exe
 ~~~~
+---
