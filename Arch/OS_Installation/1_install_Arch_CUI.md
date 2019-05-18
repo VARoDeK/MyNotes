@@ -294,7 +294,6 @@ Run the following command:
 # Install important packages:
 
 ```
-$ pacman -S linux-lts
 $ pacman -S wicd linux-headers linux-lts-headers
 ```
 

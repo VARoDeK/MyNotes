@@ -37,7 +37,7 @@ Hence I can install the `dkms` module.
 
 If your intel chip is also having integrated graphics then `mesa` is required. (_Following is tested for Xorg Server_ [Check Here](https://wiki.archlinux.org/index.php/Xorg#Driver_installation))
 
-`$ pacman -S mesa`
+`$ sudo pacman -S mesa`
 
 ---
 
