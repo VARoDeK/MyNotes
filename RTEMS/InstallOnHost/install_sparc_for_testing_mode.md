@@ -15,17 +15,17 @@ $ export PATH=$HOME/development/rtems/5/bin:$PATH
 
 	#copy paste the above line in `.zshrc` or `.bashrc`, whichever terminal you are using.
 
-`$ cd rsb`
-
-`$ ./source-builder/sb-check`
-
-`$ ./source-builder/sb-set-builder --list-bsets`
+~~~~
+$ cd rsb
+$ ./source-builder/sb-check
+$ ./source-builder/sb-set-builder --list-bsets
+~~~~
 
 ### Make RSB
-`$ cd rtems`
-
-`$ ../source-builder/sb-set-builder --prefix=/home/varodek/development/rtems/5 5/rtems-sparc`
-
+~~~~
+$ cd rtems
+$ ../source-builder/sb-set-builder --prefix=/home/varodek/development/rtems/5 5/rtems-sparc
+~~~~
 ---
 
 ## Setup RTEMS using RSB
