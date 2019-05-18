@@ -29,8 +29,8 @@ $ cd newlib-cygwin
 $ export PATH=/opt/autoconf/2.64/bin:$PATH
 $ autoreconf -fvi
 $ cd ..
-$ mkdir b-sparc-rterms5-newlib
-$ cd b-sparc-rtems5-newlib
+$ mkdir b-arm-rterms5-newlib
+$ cd b-arm-rterms5-newlib
 ~~~~
 
 Now Again, I need 2.69 version and RTEMS Toolchain.
