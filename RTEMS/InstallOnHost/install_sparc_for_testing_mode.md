@@ -6,10 +6,12 @@
 
 ## Setup RSB
 ### Set Paths and Check Environment
-```$ cd
+~~~~
+$ cd
 $ mkdir -p development/rtems && cd development/rtems
 $ git clone git://git.rtems.org/rtems-source-builder.git rsb
-$ export PATH=$HOME/development/rtems/5/bin:$PATH ```
+$ export PATH=$HOME/development/rtems/5/bin:$PATH 
+~~~~
 
 	#copy paste the above line in `.zshrc` or `.bashrc`, whichever terminal you are using.
 
