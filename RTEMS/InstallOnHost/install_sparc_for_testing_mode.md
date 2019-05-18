@@ -6,14 +6,12 @@
 
 ## Setup RSB
 ### Set Paths and Check Environment
-`$ cd`
+```$ cd
+$ mkdir -p development/rtems && cd development/rtems
+$ git clone git://git.rtems.org/rtems-source-builder.git rsb
+$ export PATH=$HOME/development/rtems/5/bin:$PATH```
 
-`$ mkdir -p development/rtems && cd development/rtems`
-
-`$ git clone git://git.rtems.org/rtems-source-builder.git rsb`
-
-`$ export PATH=$HOME/development/rtems/5/bin:$PATH`
-	#copy paste the above line in '.zshrc'
+	#copy paste the above line in `.zshrc` or `.bashrc`, whichever terminal you are using.
 
 `$ cd rsb`
 
@@ -27,5 +25,7 @@
 `$ ../source-builder/sb-set-builder --prefix=/home/varodek/development/rtems/5 5/rtems-sparc`
 
 ---
+
+## Setup RTEMS using RSB
 
 
