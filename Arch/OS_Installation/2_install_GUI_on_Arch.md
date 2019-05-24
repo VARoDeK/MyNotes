@@ -1,4 +1,4 @@
-# First you need to install the Arch CUI [Read](https://github.com/VARoDeK/mynotes/blob/master/Arch/OS_Installation/1_install_Arch_CUI.md).
+# First you need to install the [Arch CUI](https://github.com/VARoDeK/mynotes/blob/master/Arch/OS_Installation/1_install_Arch_CUI.md).
 
 ---
 
@@ -60,7 +60,7 @@ Then we need to enable it:
 
 ---
 
-##Re-start your PC. Welcome to GUI.
+## Re-start your PC. Welcome to GUI.
 
 ---
 
