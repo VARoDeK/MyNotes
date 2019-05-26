@@ -20,6 +20,10 @@ Now Additional files are neede. When explore `ndbm.h`, it requires `db.h`.
 When we explore `ndbm.c`, it requires `hash.h`
 * `hash.h` can be found in `newlib-cygwin/newlib/libc/search` directory.
 * Copy it from there to `newlib-cygwin/newlib/libc/include`.
+
+Now modify Makefile.am file in `newlib-cygwin/newlib/libc/posix`.
+* Add `ndbm.c` under `GENERAL_SOURCES` in this file.
+
 ---
 ### Run `autoreconf`
 * Move to `newlib-cygwin/newlib/libc/` directory.
