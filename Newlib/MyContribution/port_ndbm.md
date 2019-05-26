@@ -27,3 +27,12 @@ When we explore `ndbm.c`, it requires `hash.h`
 * Move to `b-sparc-rtems5-newlib` directory.
 * `$ make all`
 * `$ sudo make install`.
+---
+### Confirm the compilation using `nm`
+
+We can check for the presence of `dbm_close` function, if it is compiled or not.
+
+`$ cd  ~/development/newlib/b-sparc-rtems5-newlib/sparc-rtems5/newlib/libc/posix`
+
+`$ nm -A ./*.o | grep dbm_close`
+---
