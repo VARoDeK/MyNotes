@@ -47,6 +47,20 @@ lib_a-ndbm.o: ndbm.c
         $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -I $(top_srcdir)/search -o lib_a-ndbm.o `test -f 'ndbm.c' || echo '$(srcdir)/'`ndbm.c
 ~~~~
 
+---
+
+**Do similarly for:**
+~~~~
+lib_a-ndbm.obj: ndbm.c
+        $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-ndbm.obj `if test -f 'ndbm.c'; then $(CYGPATH_W) 'ndbm.c'; else $(CYGPATH_W) '$(srcdir)/ndbm.c'; fi`
+~~~~
+
+Now add `-I $(top_srcdir)/search`.
+
+~~~~
+lib_a-ndbm.obj: ndbm.c
+        $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -I $(top_srcdir)/search -o lib_a-ndbm.obj `if test -f 'ndbm.c'; then $(CYGPATH_W) 'ndbm.c'; else $(CYGPATH_W) '$(srcdir)/ndbm.c'; fi`
+~~~~
 
 ---
 
