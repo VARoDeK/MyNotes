@@ -19,8 +19,9 @@ Now Additional files are neede. When explore `ndbm.h`, it requires `db.h`.
 
 When we explore `ndbm.c`, it requires `hash.h`
 * `hash.h` can be found in `newlib-cygwin/newlib/libc/search` directory.
-* Copy it from there to `newlib-cygwin/newlib/libc/include`.
-
+* Open `posix/ndbm.c` and modify the line `#incude "hash.h"` to `#include <hash.h>`.
+* We need to specify `libc/search` as alternative include directory to compiler. We will do it after running `autoreconf`
+ 
 Now modify Makefile.am file in `newlib-cygwin/newlib/libc/posix`.
 * Add `ndbm.c` under `GENERAL_SOURCES` in this file.
 
@@ -28,7 +29,29 @@ Now modify Makefile.am file in `newlib-cygwin/newlib/libc/posix`.
 ### Run `autoreconf`
 * Move to `newlib-cygwin/newlib/libc/` directory.
 * `$ autoreconf -fvi`.
+
+---
+### Specify `libc/search` as alternative include directory to compiler.
+* Open `posix/Makefile.in`
+
+* Search for following line:
+~~~~
+lib_a-ndbm.o: ndbm.c
+      	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-ndbm.o `test -f 'ndbm.c' || echo '$(srcdir)/'`ndbm.c
+~~~~	
+
+Now add `-I $(top_srcdir)/search`.
+
+~~~~
+lib_a-ndbm.o: ndbm.c
+        $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -I $(top_srcdir)/search -o lib_a-ndbm.o `test -f 'ndbm.c' || echo '$(srcdir)/'`ndbm.c
+~~~~
+
+
+---
+
 * Move to `b-sparc-rtems5-newlib` directory.
+* `$ rm $(find ./ -name \config.cache)`.
 * `$ make all`
 * `$ sudo make install`.
 ---
