@@ -8,6 +8,7 @@
 ---
 
 1- Starting the service, `vmware-networks.service` for guest network access.
+
 	* `$ sudo systemctl start vmware-networks.service`.
 
 2- Run following commands:
