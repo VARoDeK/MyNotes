@@ -12,12 +12,12 @@ $ mkdir -p development/rtems && cd development/rtems
 $ git clone git://git.rtems.org/rtems-source-builder.git rsb
 $ cd rsb
 $ ./source-builder/sb-check
+$ cd rtems
 $ ./source-builder/sb-set-builder --list-bsets
 ~~~~
 
 ### Build Toolchain for SPARC using RSB
 ~~~~
-$ cd rtems
 $ ../source-builder/sb-set-builder --prefix=/home/varodek/development/rtems/5 5/rtems-sparc
 ~~~~
 
