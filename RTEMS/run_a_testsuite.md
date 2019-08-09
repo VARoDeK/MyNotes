@@ -44,7 +44,7 @@ $ sparc-rtems5-run hello.exe
 To Do
 ##### 2.2.2) - Using Emulator
 ~~~
-https://github.com/VARoDeK/MyNotes.git
+qemu-system-arm -no-reboot -serial null -serial mon:stdio -net none -nographic -M xilinx-zynq-a9 -m 256M -kernel hello.exe
 ~~~
 
 ---
