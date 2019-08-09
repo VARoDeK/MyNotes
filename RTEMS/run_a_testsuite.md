@@ -2,11 +2,9 @@
 
 #### Note: You can use `gdb` to run a testsuite, or can run it directly.
 
-### We will run the testsuite present inside SPARC BSP
-
 ---
 
-### Locate the testsuite
+### 1) - Locate the testsuite (for example let's locate SPARC tests)
 ~~~~
 $ cd
 $ cd development/rtems/kernel/erc32/sparc-rtems5/c/erc32/testsuites/samples
@@ -15,7 +13,12 @@ $ export PATH=$HOME/development/rtems/5/bin:$PATH
 
 ---
 
-### Run Using GDB
+### 2) - Run
+
+---
+
+#### 2.1) - For SPARC
+##### 2.1.1) - Using GDB
 ~~~~
 $ sparc-rtems5-gdb hello.exe
 ~~~~
@@ -30,8 +33,18 @@ $ sparc-rtems5-gdb hello.exe
 	# you can also type 'quit' instead of 'q' to terminate.
 ~~~~
 
-### Run Directly
+##### 2.1.2) - Using Emulator
 ~~~~
 $ sparc-rtems5-run hello.exe
 ~~~~
+---
+
+#### 2.1) - For ARM
+##### 2.2.1) - Using GDB
+To Do
+##### 2.2.2) - Using Emulator
+~~~
+https://github.com/VARoDeK/MyNotes.git
+~~~
+
 ---
