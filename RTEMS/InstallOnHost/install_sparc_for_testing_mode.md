@@ -13,7 +13,7 @@ $ git clone git://git.rtems.org/rtems-source-builder.git rsb
 $ cd rsb
 $ ./source-builder/sb-check
 $ cd rtems
-$ ./source-builder/sb-set-builder --list-bsets
+$ ../source-builder/sb-set-builder --list-bsets
 ~~~~
 
 ### Build Toolchain for SPARC using RSB
