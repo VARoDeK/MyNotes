@@ -7,7 +7,7 @@
 
 ---
 
-#### 1) - `git clone <repo-location>`
+### 1) - `git clone <repo-location>`
 This will clone the repository from a particular location _(location can be a URL too)_. For ex:
 ```
 $ git clone https://github.com/VARoDeK/MyNotes.git
@@ -15,17 +15,16 @@ $ git clone https://github.com/VARoDeK/MyNotes.git
 
 ---
 
-#### 2) - `git remote add <name-of-new-remote> <remote>`
+### 2) - `git remote add <name-of-new-remote> <remote>`
 To add a new remote. For ex:
 ```
 $ git remote add varodek https://github.com/VARoDeK/newlib.git
-
 ```
 Here, `varodek` is the name of remote and `https://github.com/VARoDeK/newlib.git` is the remote value, i.e. location.
 
 ---
 
-#### 3) - `git pull <remote-name> <branch-name>`
+### 3) - `git pull <remote-name> <branch-name>`
 
 This will fetch and merge the commits from the mentioned branch of the mentioned remote. For ex:
 ```
@@ -35,7 +34,7 @@ This will sync you current branch with `newBranch1` branch of the remote `varode
 
 ---
 
-#### 4) - `git push <remote-name> <branch-name>`
+### 4) - `git push <remote-name> <branch-name>`
 Similar to `git pull`, but this will sync the remote with your current branch. For ex:
 ```
 $ git push varodek newBranch1
@@ -43,7 +42,7 @@ $ git push varodek newBranch1
 
 ---
 
-#### 5) - `git checkout -b <branch-name>`
+### 5) - `git checkout -b <branch-name>`
 This will create a new branch and make this as your current. For ex:
 ```
 $ git checkout -b newBranch2
@@ -52,7 +51,7 @@ This will create a new branch with name `newBranch2` and now your current workin
 
 ---
 
-#### 6) - `git push --set-upstream <remote-name> <branch-name>`
+### 6) - `git push --set-upstream <remote-name> <branch-name>`
 
 Consider the case, you created a new branch in local repository. But now you cannot push it, as the remote repository does not have that branch. Hence, it does not know where to push the changes. So we use `--set-upstream` flag to do required. For ex:
 ```
@@ -61,7 +60,7 @@ $ git push --set-upstream varodek newBranch2
 
 ---
 
-#### 7) - `git add -A`
+### 7) - `git add -A`
 This will add all the changes, made after latest commit, to staging area. For ex:
 ```
 $ git add -A
@@ -69,7 +68,7 @@ $ git add -A
 
 ---
 
-#### 8) - `git checkout -f`
+### 8) - `git checkout -f`
 After adding changes to staging area, before commiting them, if you want to delte all changes and go back to previous commit. Use this command. For ex:
 ```
 $ git checkout -f
@@ -77,7 +76,7 @@ $ git checkout -f
 
 ---
 
-#### 9) - `git format-patch`
+### 9) - `git format-patch`
 To create patch.
 ```
 $ git fromat-patch -1
@@ -86,16 +85,16 @@ To Do
 
 ---
 
-#### 10) - `git send-email`
-To send the patch through mail.
+### 10) - `git send-email`
+To send the patch through mail. For ex:
 ```
-$ git send-email -1 -v4 --to=devel@rtems.org --cc=aadit0402@gmail.com --cc=joel@rtems.org --cc=heshamelmatary@gmail.com --cc=gedare@rtems.org
+$ git send-email -1 -v4 --to=devel@rtems.org --cc=abcd1@xyz1 --cc=abcd2@xyz2
 ```
-To Do
+This will send email to `devel@rtems.org` and it will be cc'd to `abcd1@xyz1` and `abcd2@xyz2`.
 
 ---
 
-#### 11) - `git reset --soft HEAD~<n>`
+### 11) - `git reset --soft HEAD~<n>`
 To delete the previous **n** commits, but don't delete the changes made. Instead the changes are bought to staging area. For ex:
 ```
 $ git reset --soft HEAD~2
