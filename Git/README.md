@@ -52,7 +52,16 @@ This will create a new branch with name `newBranch2` and now your current workin
 
 ---
 
-#### 6) - `git add -A`
+#### 6) - `git push --set-upstream <remote-name> <branch-name>`
+
+Consider the case, you created a new branch in local repository. But now you cannot push it, as the remote repository does not have that branch. Hence, it does not know where to push the changes. So we use `--set-upstream` flag to do required. For ex:
+```
+$ git push --set-upstream varodek newBranch2
+```
+
+---
+
+#### 7) - `git add -A`
 This will add all the changes, made after latest commit, to staging area. For ex:
 ```
 $ git add -A
@@ -60,7 +69,7 @@ $ git add -A
 
 ---
 
-#### 7) - `git checkout -f`
+#### 8) - `git checkout -f`
 After adding changes to staging area, before commiting them, if you want to delte all changes and go back to previous commit. Use this command. For ex:
 ```
 $ git checkout -f
@@ -68,12 +77,32 @@ $ git checkout -f
 
 ---
 
-#### 8) - `git format-patch`
+#### 9) - `git format-patch`
+To create patch.
+```
+$ git fromat-patch -1
+```
 To Do
 
 ---
 
-#### 9) - `git send-email`
+#### 10) - `git send-email`
+To send the patch through mail.
+```
+$ git send-email -1 -v4 --to=devel@rtems.org --cc=aadit0402@gmail.com --cc=joel@rtems.org --cc=heshamelmatary@gmail.com --cc=gedare@rtems.org
+```
 To Do
+
+---
+
+#### 11) - `git reset --soft HEAD~<n>`
+To delete the previous **n** commits, but don't delete the changes made. Instead the changes are bought to staging area. For ex:
+```
+$ git reset --soft HEAD~2
+```
+This will delete the last **2** commits of the current branch. All the chnages will be reflected in staging area. But in this case if you want push the changes, you need to do:
+```
+git push -f <remote-name> <branch-name>
+```
 
 ---
