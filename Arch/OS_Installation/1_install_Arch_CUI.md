@@ -10,7 +10,7 @@ The ISO image provided by ArchLinux has only Command Line Interface. GUI can be 
 ---
 
 ## 1 - First Download Arch and make a Bootable Pendrive
-* [Download Arch From Here](http://mirror.cse.iitk.ac.in/archlinux/iso/2019.04.01/).
+* [Download Arch From Here](https://www.archlinux.org/download/).
 * Download ISO File.
 * Make a bootable pendrive. You can use [Balena - Etcher](https://www.balena.io/etcher/) for this purpose. It's a very handy and easy to use tool for burning Linux images.
 
