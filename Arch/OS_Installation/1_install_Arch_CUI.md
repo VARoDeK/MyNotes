@@ -67,17 +67,19 @@ For example, my HDD has three partitions. And its the only secondary memory devi
 * `sda1`
 * `sda2`
 * `sda3`
+* `sda4`
 
 Recommended - Make three partitions for installing Arch Linux.
 I will exaplin it with the help of my system.
 
-|Partition Name | Partition Type | Size|
-|:-------------:|:--------------:|:---:|
-| `sda1`        | vfat           | 550M|
-| `sda2`        | ext4           | 923G|
-| `sda3`        | swap           | 7.8G|
+|Partition Name | Partition Type | Purpose | Size|
+|:-------------:|:--------------:|:-------:|:---:|
+| `sda1`        | vfat           | GRUB/efi | 1G |
+| `sda2`        | ext4           | `/` | 350G |
+| `sda3`        | ext4           | `/home` | 567G |
+| `sda4`        | swap           | `swap` | 11.3G |
 
-Note - The size of swap (sda3 in my case) should be almost eqal to the size of your RAM.
+Note - The size of swap (sda4 in my case) should be almost eqal to the size of your RAM.
 
 ---
 
@@ -86,17 +88,21 @@ I will explain it using the partitions of my own system. **Use the partition nam
 
 * `sda1` should be of `vfat` type.
 
-`$ mkfs.vfat /dev/sda1`
+`$ mkfs.fat -F32 /dev/sda1`
 
 * `sda2` should be of `ext4` type.
 
 `$ mkfs.ext4 /dev/sda2`
 
-* `sda3` is a swap.
+* `sda2` should be of `ext4` type.
+
+`$ mkfs.ext4 /dev/sda3`
+
+* `sda3` should be of `ext4` type.
 
 ```
-$ mkswap /dev/sda3
-$ swapon /dev/sda3
+$ mkswap /dev/sda4
+$ swapon /dev/sda4
 ```
 
 ---
@@ -106,7 +112,6 @@ Run the Following Commands:
 
 ```
 $ mkdir /mnt/boot
-$ mount /dev/sda1 /mnt/boot
 $ mount /dev/sda2 /mnt
 ```
 
@@ -120,7 +125,7 @@ $ mount /dev/sda2 /mnt
 
 Run the Following Command:
 
-`$ pacstrap /mnt base base-devel dialog iw wpa_supplicant sudo`
+`$ pacstrap /mnt base base-devel linux linux-firmware dialog iw wpa_supplicant sudo`
 
 ---
 
@@ -241,6 +246,8 @@ Now you need to remember if you have UEFI or not.
 #### No UEFI
 ``` 
 $ pacman -S grub os-prober ntfs-3g
+$ mount /dev/sda1 /boot
+$ mount /dev/sda3 /home
 $ grub-install --target=i386-pc /dev/sdx
 $ grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -249,6 +256,8 @@ Please replace **x** with the character of your Hard Disk.
 #### With UEFI
 ```
 $ pacman -S grub os-prober efibootmgr ntfs-3g
+$ mount /dev/sda1 /boot
+$ mount /dev/sda3 /home
 $ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 $ grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -315,7 +324,11 @@ After booting, you will encounter a black screen with option to login. You can n
 * You need to type username (_for this tutorial we took 'newuser'_).
 * Enter Passowrd you added for this user. 
 
+---
 
+# Entry for `/home`
+
+You may have to manually enter the details of `/dev/sda3` for mounting it on `/home` in `fstab` file.
 
 
 
