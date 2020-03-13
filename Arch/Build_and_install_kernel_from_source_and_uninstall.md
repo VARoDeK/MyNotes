@@ -1,6 +1,10 @@
 # Make your own Kernel from Source and Install It
 
-The steps below are to install linux-5.5.9 _(stable)_. It can be found on https://git.kernel.org/ .
+The content is inspired from: 
+* Linux Foundation Course [LFD103](https://training.linuxfoundation.org/training/a-beginners-guide-to-linux-kernel-development-lfd103/).
+* ArchWiki - [Kernel/Traditional compilation](https://wiki.archlinux.org/index.php/Kernel/Traditional_compilation).
+
+The steps below are to install linux-5.5.9 _(stable)_. The Kernel can be found on https://git.kernel.org/ .
 
 Steps are same for any version, any kernel tree.
 
