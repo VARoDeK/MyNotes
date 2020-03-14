@@ -1,4 +1,4 @@
-# Make your own Kernel from Source and Install It
+# Build your own Linux Kernel from Source and Install It
 
 The content is inspired from: 
 * Linux Foundation Course [LFD103](https://training.linuxfoundation.org/training/a-beginners-guide-to-linux-kernel-development-lfd103/).

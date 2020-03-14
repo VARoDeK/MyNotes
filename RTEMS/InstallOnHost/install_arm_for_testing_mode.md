@@ -48,7 +48,7 @@ $ cd xilinx_zynq_a9_qemu
 ~~~~
 $ /home/varodek/development/rtems/kernel/rtems/configure --prefix=/home/varodek/development/rtems/5 --enable-maintainer-mode --target=arm-rtems5 --enable-rtemsbsp=xilinx_zynq_a9_qemu --enable-tests --enable-posix --disable-networking --enable-cxx
 ~~~~
-### Build using 2 cores and insall
+### Build using 2 cores and install
 ~~~~
 $ make -j 2
 $ make install
